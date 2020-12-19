@@ -1,0 +1,6 @@
+#!/bin/bash
+
+dwmbar &
+st &
+picom &
+wal -i Wallpaper13.jpg
