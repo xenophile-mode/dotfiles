@@ -1,6 +1,9 @@
 XTerm*selectToClipboard: true
 XTerm*faceName:    IBM Plex Mono:pixelsize=11
-XTerm*background:  #111111
+XTerm.vt100.translations: #override \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+		Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+XTerm*background:  #000000
 XTerm*foreground:  #eeeeee
 XTerm*color0:      #000000
 XTerm*color1:      #9e1828
