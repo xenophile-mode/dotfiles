@@ -38,7 +38,7 @@ welcome;
 cat /home/xenophile/.cache/wal/sequences
 
 #Xterm transparency
-[ -n "$XTERM_VERSION"  ] && transset-df 0.9 --id "$WINDOWID" >/dev/null
+[ -n "$XTERM_VERSION"  ] && transset-df 0.85 --id "$WINDOWID" >/dev/null
 
 # Make colorcoding available for everyone
 
