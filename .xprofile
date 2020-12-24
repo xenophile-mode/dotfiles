@@ -1,6 +1,6 @@
 #!/bin/bash
 
 dwmbar &
-st &
+xterm &
 picom &
 wal -i Wallpaper13.jpg
