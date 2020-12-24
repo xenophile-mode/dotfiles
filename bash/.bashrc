@@ -37,6 +37,9 @@ welcome;
 #wal -i Wallpaper17.png -q
 cat /home/xenophile/.cache/wal/sequences
 
+#Xterm transparency
+[ -n "$XTERM_VERSION"  ] && transset-df 0.9 --id "$WINDOWID" >/dev/null
+
 # Make colorcoding available for everyone
 
 Black='\[\e[0;30m\]'	# Black
@@ -138,3 +141,6 @@ PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 #exec fish
+
+#Start dvtm
+#exec dvtm
