@@ -3,6 +3,7 @@ XTerm*faceName:    IBM Plex Mono:pixelsize=11
 XTerm.vt100.translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
 		Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+    <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
 XTerm*background:  #000000
 XTerm*foreground:  #eeeeee
 XTerm*color0:      #000000
