@@ -1,5 +1,8 @@
 #!/bin/bash
 
+pulseeffects --gapplication-service &
+bash test.sh
+xrdb -merge .Xresources
 dwmbar &
 xterm &
 picom &
