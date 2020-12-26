@@ -5,5 +5,7 @@ bash test.sh
 xrdb -merge .Xresources
 dwmbar &
 xterm &
+xterm mocp &
 picom &
 wal -i Wallpaper13.jpg
+qutebrowser &
