@@ -13,6 +13,16 @@
 SqueezeTitle	{ }
 
 
+#Keyboard Shortcuts
+"p" = m     : all : f.exec "dmenu_run -l 25"
+"q" = m     : all : f.destroy
+ShowIconManager
+IconManagerGeometry "320x200+0+0" 3
+"k" = m     : all : f.lefticonmgr
+"l" = m     : all : f.downiconmgr
+"h" = m     : all : f.upiconmgr
+"j" = m     : all : f.righticonmgr
+
 NoGrabServer
 #NoDefaults
 RestartPreviousState
