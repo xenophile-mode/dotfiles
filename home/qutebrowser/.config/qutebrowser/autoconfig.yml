@@ -25,3 +25,6 @@ settings:
     global: 5000
   url.default_page:
     global: https://www.google.com
+  url.searchengines:
+    global:
+      DEFAULT: https://www.google.com.ar/search?q={}
