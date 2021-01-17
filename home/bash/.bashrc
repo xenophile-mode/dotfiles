@@ -98,6 +98,7 @@ alias reload='source ~/.bashrc' #reloads .bashrc
 alias nnn='nnn -e'
 alias cdd='fzf'
 alias vpn='windscribe connect'
+alias budget='sc-im mybudget.csv'
 
 # Auto completion
 complete -cf sudo
