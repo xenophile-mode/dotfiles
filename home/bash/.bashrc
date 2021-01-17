@@ -96,7 +96,8 @@ alias reboot="sudo shutdown -r now"
 alias off="sudo shutdown -h now"
 alias reload='source ~/.bashrc' #reloads .bashrc
 alias nnn='nnn -e'
-
+alias cdd='fzf'
+alias vpn='windscribe connect'
 
 # Auto completion
 complete -cf sudo
@@ -140,6 +141,11 @@ PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+. /usr/share/fzf/key-bindings.bash
+export FZF_DEFAULT_COMMAND="find -L"
+
+
 #exec fish
 
 #Start dvtm
