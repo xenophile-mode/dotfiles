@@ -4,6 +4,6 @@ xrdb -merge .Xresources
 dwmbar &
 xterm &
 picom &
-wal -i Wallpaper13.jpg
+wal -i papes/Wallpaper3.jpg
 qutebrowser &
 exec dwm

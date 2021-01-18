@@ -8,6 +8,9 @@
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+#autocd into directories
+shopt -s autocd
+
 #Welcome message
 welcome() { 
     #------------------------------------------ 
@@ -99,12 +102,18 @@ alias nnn='nnn -e'
 alias cdd='fzf'
 alias vpn='windscribe connect'
 alias budget='sc-im mybudget.csv'
+alias xr='xrdb -merge .Xresources'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+
 
 # Auto completion
 complete -cf sudo
 complete -cf which
 bind 'TAB:menu-complete'
-
 
 #Directory path bash prompt
 # Colour codes are cumbersome, so let's name them
@@ -127,25 +136,27 @@ gitBranch() {
 # Build the prompt
 export PS1="${pathC}\w ${gitC}\$(gitBranch) ${pointerC}\$${normalC} "
 
-
-
 # Set PATH so it includes user's private bin directories
 PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
-
-
-
-
-
 # Set prompt
 PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
-
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 . /usr/share/fzf/key-bindings.bash
 export FZF_DEFAULT_COMMAND="find -L"
 
+#cd and ls in one command
+cdls() {
+        local dir="$1"
+        local dir="${dir:=$HOME}"
+        if [[ -d "$dir" ]]; then
+                cd "$dir" >/dev/null; ls --color=auto
+        else
+                echo "bash: cdls: $dir: Directory not found"
+        fi
+}
 
 #exec fish
 
