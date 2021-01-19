@@ -5,7 +5,7 @@
 [[ $- != *i* ]] && return
 
 #Default editor
-export VISUAL=vim
+export VISUAL=kak
 export EDITOR="$VISUAL"
 
 #autocd into directories
@@ -33,11 +33,10 @@ welcome() {
 welcome; 
 
 #nnn config
-#export EDITOR="vim"
+export EDITOR="kak"
 #export NNN_USE_EDITOR=1
 
 #Pywal exec on every terminal
-#wal -i Wallpaper17.png -q
 cat /home/xenophile/.cache/wal/sequences
 
 #Xterm transparency
@@ -92,7 +91,7 @@ alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias grep='grep --color=auto'
 alias q='exit'
-alias k='pkill'
+alias kl='pkill'
 alias home='cd ~'
 alias root='cd /'
 alias reboot="sudo shutdown -r now"
@@ -101,14 +100,23 @@ alias reload='source ~/.bashrc' #reloads .bashrc
 alias nnn='nnn -e'
 alias cdd='fzf'
 alias vpn='windscribe connect'
-alias budget='sc-im mybudget.csv'
+alias bgt='sc-im mybudget.csv'
 alias xr='xrdb -merge .Xresources'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 alias gl='git log'
 alias gs='git status'
-
+alias md='mkdir'
+alias k='kak'
+alias pi='sudo pacman -S'
+alias pu='sudo pacman -Syyu'
+alias pr='sudo pacman -Syy'
+alias y='yay'
+alias yi='yay -S'
+alias yu='yay -Syyu'
+alias yr='yay -Syy'
+alias b='bash'
 
 # Auto completion
 complete -cf sudo
@@ -147,16 +155,26 @@ PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
 . /usr/share/fzf/key-bindings.bash
 export FZF_DEFAULT_COMMAND="find -L"
 
-#cd and ls in one command
-cdls() {
-        local dir="$1"
-        local dir="${dir:=$HOME}"
-        if [[ -d "$dir" ]]; then
-                cd "$dir" >/dev/null; ls --color=auto
-        else
-                echo "bash: cdls: $dir: Directory not found"
-        fi
+#fff config
+export FFF_HIDDEN=1
+export FFF_FAV1=~/dotfiles/
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/.Xresources
+export FFF_FAV4=~/.config/
+export FFF_FAV5=~/.xinitrc
+export FFF_FAV6=/usr/share
+export FFF_FAV7=~/.local/src/dwm
+export FFF_FAV8=~/.local/src/dmenu/
+export FFF_FAV9=/
+
+#Auto cd on exit for fff
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
+
+#enable vi mode
+set -o vi
 
 #exec fish
 
