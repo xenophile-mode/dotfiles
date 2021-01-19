@@ -80,7 +80,7 @@ ALERT="${BWhite}${On_Red}" # Bold White on red background
 # Useful aliases
 alias c='clear'
 alias ..='cd ..'
-alias ls='ls -lah --color=auto'
+alias ls='ls -lah --color=auto --group-directories-first'
 alias ll='s -lisa --color=auto'
 alias mkdir='mkdir -pv'
 alias free='free -mt'
