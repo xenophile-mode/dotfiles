@@ -4,42 +4,40 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Default editor
+# Default editor
 export VISUAL=kak
 export EDITOR="$VISUAL"
 
-#autocd into directories
+# autocd into directories
 shopt -s autocd
 
-#Welcome message
-welcome() { 
+# Welcome message
+#welcome() {
     #------------------------------------------ 
     #------WELCOME MESSAGE--------------------- 
     # customize this first message with a message of your choice. 
     # this will display the username, date, time, a calendar, the amount of users, and the up time. 
     #clear 
     # Gotta love ASCII art with figlet 
-    figlet -f cybermedium "Welcome, " $USER; 
-    #toilet "Welcome, " $USER; 
-    echo -e ""; cal ; 
-    echo -ne "Today is "; date #date +"Today is %A %D, and it is now %R" 
-    echo -e "" 
-    echo -ne "Up time:";uptime | awk /'up/' 
-    free used 
-    iostat
-    netstat -i 
-    echo ""; 
-} 
-welcome; 
+#    figlet -f cybermedium "Welcome, " $USER; 
+#    #toilet "Welcome, " $USER; 
+#    echo -e ""; cal ; 
+#    echo -ne "Today is "; date #date +"Today is %A %D, and it is now %R" 
+#    echo -e "" 
+#    echo -ne "Up time:";uptime | awk /'up/' 
+#    free used 
+#    iostat
+#    netstat -i 
+#    echo ""; 
+#} 
+#welcome; 
 
-#nnn config
 export EDITOR="kak"
-#export NNN_USE_EDITOR=1
 
-#Pywal exec on every terminal
+# Pywal exec on every terminal
 cat /home/xenophile/.cache/wal/sequences
 
-#Xterm transparency
+# Xterm transparency
 [ -n "$XTERM_VERSION"  ] && transset-df 0.85 --id "$WINDOWID" >/dev/null
 
 # Make colorcoding available for everyone
@@ -77,7 +75,7 @@ NC='\[\e[m\]'			# Color Reset
 
 ALERT="${BWhite}${On_Red}" # Bold White on red background
 
-# Useful aliases
+# Aliases
 alias c='clear'
 alias ..='cd ..'
 alias ls='ls -lah --color=auto --group-directories-first'
@@ -90,6 +88,7 @@ alias wget='wget -c'
 alias histg='history | grep'
 alias myip='curl ipv4.icanhazip.com'
 alias grep='grep --color=auto'
+alias diff='diff --colot=auto'
 alias q='exit'
 alias kl='pkill'
 alias home='cd ~'
@@ -123,7 +122,7 @@ complete -cf sudo
 complete -cf which
 bind 'TAB:menu-complete'
 
-#Directory path bash prompt
+# Directory path bash prompt
 # Colour codes are cumbersome, so let's name them
 txtcyn='\[\e[0;96m\]' # Cyan
 txtpur='\[\e[0;35m\]' # Purple
@@ -150,12 +149,13 @@ PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 # Set prompt
 PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
 
+# fzf config
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 . /usr/share/fzf/key-bindings.bash
 export FZF_DEFAULT_COMMAND="find -L"
 
-#fff config
+# fff config
 export FFF_HIDDEN=1
 export FFF_FAV1=~/dotfiles/
 export FFF_FAV2=~/.bashrc
@@ -167,14 +167,17 @@ export FFF_FAV7=~/.local/src/dwm
 export FFF_FAV8=~/.local/src/dmenu/
 export FFF_FAV9=/
 
-#Auto cd on exit for fff
+# Auto cd on exit for fff
 f() {
     fff "$@"
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 
-#enable vi mode
+# enable vi mode
 set -o vi
+
+# pfetch config
+PF_INFO="ascii title os host kernel uptime pkgs memory shell editor wm de" pfetch
 
 #exec fish
 
