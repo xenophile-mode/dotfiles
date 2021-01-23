@@ -1,0 +1,181 @@
+fontname "Dina-Medium:pixelsize=20:bold"
+ 
+# these shows up in Application Menu (Mouse 3)
+command cbb                     "cbb.sh"
+command '_'                     "/usr/bin/true a > /dev/null 2>&1"
+command Identify                "xwininfo.sh"
+command XKill                   "/usr/X11R6/bin/xkill"
+command Forecast                "show_weatherX.sh wless"
+command '-  '                   "/usr/bin/false c > /dev/null 2>&1"
+command "Restart cwm clients"	"clients.sh RESTART"
+ 
+#--- Mouse Setting
+bind-mouse M-1 window-move
+bind-mouse M-3 window-resize
+ 
+# keyboard
+unbind-key CM-Delete
+unbind-key CM-h
+unbind-key CM-j
+unbind-key CM-k
+unbind-key CM-l
+unbind-key CMS-h
+unbind-key CMS-j
+unbind-key CMS-k
+unbind-key CMS-l
+unbind-key M-Right
+unbind-key M-Left
+unbind-key M-x
+unbind-key 4-x
+unbind-key MS-r
+unbind-key MS-k
+unbind-key MS-j
+unbind-key MS-l
+unbind-key MS-h
+unbind-key M-k
+unbind-key M-j
+unbind-key M-l
+unbind-key M-h
+ 
+#--- colors
+color activeborder DarkGoldenrod4
+borderwidth 2
+color menubg azure4
+color menufg black
+color selfont "#FFBF00"
+gap 0 20 0 0
+ 
+#--- setup
+bind-key 4-r	menu-exec
+bind-key 4-1	window-hide
+bind-key 4-2	window-vmaximize
+bind-key 4-3	window-hmaximize
+bind-key 4-4	window-maximize
+bind-key 4-q	window-delete
+bind-key 4-k	window-move-up-big
+bind-key 4-j	window-move-down-big
+bind-key 4-l	window-move-right-big
+bind-key 4-h	window-move-left-big
+ 
+bind-key CM-r	restart
+bind-key MS-k	window-move-up
+bind-key MS-j	window-move-down
+bind-key MS-l	window-move-right
+bind-key MS-h	window-move-left
+bind-key M-k	window-move-up-big
+bind-key M-j	window-move-down-big
+bind-key M-l	window-move-right-big
+bind-key M-h	window-move-left-big
+bind-key M-r	menu-exec
+bind-key M-1	window-hide
+bind-key M-2	window-vmaximize
+bind-key M-3	window-hmaximize
+bind-key M-4	window-maximize
+bind-key M-q	window-delete
+bind-key M-p    "dmenu_run -l 25"
+bind-key M-f    xterm
+ 
+bind-key 4-Print	"print_window.sh"
+bind-key M-Print	"print_window.sh"
+bind-key XF86AudioRaiseVolume "amixer sset Master,0 5%+"
+bind-key XF86AudioLowerVolume "amixer sset Master,0 5%-"
+bind-key XF86AudioMute        "amixer sset Master,0 toggle"
+ 
+bind-key CM-Right group-cycle
+bind-key CM-Down group-cycle
+bind-key CM-Left group-rcycle
+bind-key CM-Up   group-rcycle
+ 
+# resize keys
+bind-key MC-u      window-resize-left
+bind-key MC-i      window-resize-right
+bind-key MC-o      window-resize-up
+bind-key MC-p      window-resize-down
+ 
+# remove defaults
+unbind-key CM-Delete
+unbind-key CM-h
+unbind-key CM-j
+unbind-key CM-k
+unbind-key CM-l
+unbind-key CMS-h
+unbind-key CMS-j
+unbind-key CMS-k
+unbind-key CMS-l
+unbind-key M-Right
+unbind-key M-Left
+ 
+bind-key CM-L    "lock.sh"
+bind-key CM-l    "lock.sh"
+ 
+bind-key 4-F1   group-only-1
+bind-key 4-F2   group-only-2
+bind-key 4-F3   group-only-3
+bind-key 4-F4   group-only-4
+bind-key 4-F5   group-only-5
+bind-key 4-F6   group-only-6
+bind-key 4-F7   group-only-5
+bind-key 4-F8   group-only-8
+bind-key 4-F9   group-only-9
+bind-key M-F1   group-only-1
+bind-key M-F2   group-only-2
+bind-key M-F3   group-only-3
+bind-key M-F4   group-only-4
+bind-key M-F5   group-only-5
+bind-key M-F6   group-only-6
+bind-key M-F7   group-only-5
+bind-key M-F8   group-only-8
+bind-key M-F9   group-only-9
+ 
+bind-key CM-w   skippy-xd
+ 
+sticky yes
+ignore conky
+ignore xclock
+ignore oclock
+ignore xconsole
+ignore xbiff
+ignore xeyes
+ignore xload
+ignore stalonetray
+ignore gkrellm
+ignore xmessage
+ignore xlogo
+ 
+autogroup 0 "xbiff,XBiff"
+autogroup 0 "xlogo,XLogo"
+autogroup 0 "xconsole,XConsole"
+autogroup 0 "xclock,XClock"
+autogroup 0 "oclock,Clock"
+autogroup 0 "xload,XLoad"
+autogroup 0 "xmessage,Xmessage"
+autogroup 0 "stalonetray,stalonetray"
+autogroup 0 "xeyes,XEyes"
+ 
+autogroup 1 "xterm,XTerm"
+autogroup 1 "konsole,Konsole"
+autogroup 1 "emacs,Emacs"
+autogroup 1 "gvim,Gvim"
+ 
+autogroup 2 "Mail,Thunderbird"
+autogroup 2 "Navigator,Firefox"
+autogroup 2 "Navigator,Seamonkey"
+autogroup 2 "cbb,Cbb"
+ 
+autogroup 3 "xgammon,XGammon"
+autogroup 3 "XGammon-Buttons,XGammon"
+autogroup 3 "xmahjongg,XMahjongg"
+autogroup 3 "xboard,Xboard"
+autogroup 3 "xkobo-score,XKobo-score"
+autogroup 3 "xkobo,XKobo"
+autogroup 3 "SDL_App,SDL_App"
+autogroup 3 "icebreaker,IceBreaker"
+autogroup 3 "xbill,XBill"
+autogroup 3 "xsok,XSok"
+autogroup 3  "xjumpjump,XForm"
+ 
+autogroup 4 "gpicview,gpicview"
+autogroup 4 "gpicview,Gpicview"
+autogroup 4 "xv,XVroot"
+ 
+# END
