@@ -110,12 +110,16 @@ alias md='mkdir'
 alias k='kak'
 alias pi='sudo pacman -S'
 alias pu='sudo pacman -Syyu'
-alias pr='sudo pacman -Syy'
+alias puu='sudo pacman -Syy'
+alias pr='sudo pacman -Rsn'
 alias y='yay'
 alias yi='yay -S'
 alias yu='yay -Syyu'
-alias yr='yay -Syy'
+alias yuu='yay -Syy'
+alias yr='yay -Rsn'
 alias b='bash'
+alias rt='rtorrent'
+alias se='sudoedit'
 
 # Auto completion
 complete -cf sudo
@@ -150,10 +154,10 @@ PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
 
 # fzf config
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-. /usr/share/fzf/key-bindings.bash
-export FZF_DEFAULT_COMMAND="find -L"
+#. /usr/share/fzf/key-bindings.bash
+#export FZF_DEFAULT_COMMAND="find -L"
 
 # fff config
 export FFF_HIDDEN=1
@@ -179,7 +183,4 @@ set -o vi
 # pfetch config
 PF_INFO="ascii title os host kernel uptime pkgs memory shell editor wm de" pfetch
 
-#exec fish
-
-#Start dvtm
-#exec dvtm
+source /home/xenophile/.config/broot/launcher/bash/br
