@@ -120,6 +120,9 @@ alias ar='paru -Rsn'
 alias b='bash'
 alias rt='rtorrent'
 alias se='sudoedit'
+alias yv='youtube-viewer'
+alias yvv='youtube-viewer -SV'
+alias xterm='xterm -b 20'
 
 # Auto completion
 complete -cf sudo
