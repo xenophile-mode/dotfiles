@@ -38,7 +38,7 @@ export EDITOR="kak"
 cat /home/xenophile/.cache/wal/sequences
 
 # Xterm transparency
-[ -n "$XTERM_VERSION"  ] && transset-df 0.85 --id "$WINDOWID" >/dev/null
+#[ -n "$XTERM_VERSION"  ] && transset-df 0.75 --id "$WINDOWID" >/dev/null
 
 # Make colorcoding available for everyone
 
@@ -123,6 +123,8 @@ alias se='sudoedit'
 alias yv='youtube-viewer'
 alias yvv='youtube-viewer -SV'
 alias xterm='xterm -b 20'
+alias feh="feh --image-bg black -Z -."
+alias qbexp="sed -E 's|^(\S+) ?(.*)|<a href="\1">\2</a>|' ~/.config/qutebrowser/bookmarks/urls > qutebrowser-bookmarks.html"
 
 # Auto completion
 complete -cf sudo
