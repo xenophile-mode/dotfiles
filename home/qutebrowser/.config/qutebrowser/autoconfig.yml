@@ -11,12 +11,18 @@ settings:
   bindings.commands:
     global:
       normal:
+        <Ctrl+t>: null
         co: null
         d: null
+        h: session-save
         m: buffer
   content.notifications:
     https://dlive.tv: false
+    https://trovo.live: false
+    https://www.reddit.com: false
     https://www.youtube.com: false
+  input.insert_mode.leave_on_load:
+    global: true
   statusbar.show:
     global: in-mode
   tabs.show:
