@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#   _         _        _
+#  | | ____ _| |_ _ __(_) __ ___      ___ __ ___
+#  | |/ / _` | __| '__| |/ _` \ \ /\ / / '_ ` _ \
+#  |   < (_| | |_| |  | | (_| |\ V  V /| | | | | |
+#  |_|\_\__,_|\__|_|  |_|\__,_| \_/\_/ |_| |_| |_|
+#
+# Launches a katriawm session. This script is supposed to be called last
+# in your ~/.xinitrc.
+
+
+while sleep 0.25; do nhkd; done &
+#while sleep 0.25; do ~/work/C/xpointerbarrier/xpointerbarrier -k; done &
+
+# This is the first bar at the top of the screen. It shows tags,
+# layouts, and such.
+#
+# A note on the two while loops:
+#
+#     - The loop around katriabi is for development purposes. When/if I
+#       hack on katriabi, I can simply issue a "killall katriabi" to
+#       restart all instances.
+#     - The loop around bevelbar is needed because bevelbar does not
+#       handle xrandr changes. Instead, when changing the screen layout,
+#       I do a "killall bevelbar" to restart all bars.
+(
+while sleep 0.25; do katriabi bevelbar; done |
+while sleep 0.25
+do
+    # Styles used by katriabi:
+    #
+    #   0 layout normal
+    #   1 layout pressed
+    #   2 normal normal
+    #   3 normal pressed
+    #   4 urgent normal
+    #   5 urgent pressed
+    #
+    # These styles are predefined in bevelbar, so we don't have to call
+    # "-s 0 -c ..." here. Instead, we only set the bar's position.
+    bevelbar -h left -v top
+done
+) &
+
+# Additional bars, showing generic status infos.
+bevelbar-launch-status-bars &
+
+# If katriawm happens to crash, just restart it. (I didn't see a crash
+# in a long time. Still, I'd rather be on the safe side.)
+while ! katriawm
+do
+    sleep 1
+done

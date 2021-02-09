@@ -1,0 +1,62 @@
+#!/bin/bash
+
+export PATH=$PATH:~/work/C/infofeld2
+
+# infofeld2 uses very small fonts. By using the old byte code
+# interpreter (which was the default in FreeType up until version 2.6),
+# we get sharper display. FreeType will try harder to "beat" the font
+# into actual pixels. This won't do a good job at retaining the original
+# font shape, but it will also produce a less fuzzy image. The latter is
+# more important for the very small font sizes that we use.
+#
+# This should be accompanied by aggressive hinting ("hintstyle full").
+# See fontconfig configuration.
+export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+
+workdir=$(mktemp -d)
+trap 'rm -Rf "$workdir"' EXIT
+
+height=$(bevelbar -C)
+
+msg_time_left="$workdir/msg_time_left"
+msg_time_right="$workdir/msg_time_right"
+msg_infofeld="$workdir/msg_infofeld"
+
+# Fork off restartable workers: Text status and infofeld widgets.
+#while sleep 0.25; do bevelbar-status "$msg_time_left"; done &
+#while sleep 0.25; do bevelbar-xplanet "$height" "$workdir"/worldmap.ff; done &
+
+for feld in cpu memory net temperature battery sun
+do
+    (
+        cd -- "$workdir" &&
+        while sleep 0.25; do infofeld2-"$feld" -h "$height"; done
+    ) &
+done
+
+# Construct static files to be read by bevelbar-time.
+cat >"$msg_time_right" <<EOF
+i3$workdir/sun.ff
+i3$workdir/worldmap.ff
+EOF
+
+cat >"$msg_infofeld" <<EOF
+i3$workdir/cpu.ff
+i3$workdir/memory.ff
+i3$workdir/net.ff
+i3$workdir/temperature.ff
+i3$workdir/battery.ff
+EOF
+
+# Alright, now run the bars. Again, everything restartable.
+(
+while sleep 0.25; do bevelbar-time -n -l "$msg_infofeld"; done |
+while sleep 0.25; do bevelbar -h center -v bottom; done
+) &
+
+(
+while sleep 0.25; do bevelbar-time -l "$msg_time_left" -r "$msg_time_right"; done |
+while sleep 0.25; do bevelbar -h right -v top; done
+) &
+
+wait
