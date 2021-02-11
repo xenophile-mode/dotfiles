@@ -112,11 +112,11 @@ alias pi='sudo pacman -S'
 alias pu='sudo pacman -Syyu'
 alias puu='sudo pacman -Syy'
 alias pr='sudo pacman -Rsn'
-alias a='paru'
-alias ai='paru -S'
-alias au='paru -Syyu'
-alias auu='paru -Syy'
-alias ar='paru -Rsn'
+alias a='yay'
+alias ai='yay -S'
+alias au='yay -Syyu'
+alias auu='yay -Syy'
+alias ar='yay -Rsn'
 alias b='bash'
 alias rt='rtorrent'
 alias se='sudoedit'
@@ -125,6 +125,7 @@ alias yvv='youtube-viewer -SV'
 alias xterm='xterm -b 20'
 alias feh="feh --image-bg black -Z -."
 alias qbexp="sed -E 's|^(\S+) ?(.*)|<a href="\1">\2</a>|' ~/.config/qutebrowser/bookmarks/urls > qutebrowser-bookmarks.html"
+alias rss='canto-curses'
 
 # Auto completion
 complete -cf sudo
