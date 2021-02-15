@@ -11,7 +11,13 @@ settings:
   bindings.commands:
     global:
       normal:
+        '!': open -t https://boards.4channel.org/g/
+        '#': open -t https://lobste.rs/
+        '1': open https://boards.4channel.org/g/
+        '2': open https://news.ycombinator.com/
+        '3': open https://lobste.rs/
         <Ctrl+t>: null
+        '@': open -t https://news.ycombinator.com/
         co: null
         d: null
         h: session-save
