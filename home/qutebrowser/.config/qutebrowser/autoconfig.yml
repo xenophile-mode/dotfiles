@@ -13,16 +13,20 @@ settings:
       normal:
         '!': open -t https://boards.4channel.org/g/
         '#': open -t https://lobste.rs/
+        $: open -t https://www.youtube.com/
         '1': open https://boards.4channel.org/g/
         '2': open https://news.ycombinator.com/
         '3': open https://lobste.rs/
+        '4': open https://www.youtube.com/
         <Ctrl+t>: null
         '@': open -t https://news.ycombinator.com/
+        '`': tab-close
         co: null
         d: null
         h: session-save
         m: buffer
   content.notifications:
+    https://boards.4channel.org: true
     https://dlive.tv: false
     https://trovo.live: false
     https://www.reddit.com: false
