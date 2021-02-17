@@ -20,10 +20,14 @@ settings:
         '4': open https://www.youtube.com/
         <Ctrl+t>: null
         '@': open -t https://news.ycombinator.com/
+        J: scroll-px 0 800
+        K: scroll-px 0 -800
+        S: session-save
         '`': tab-close
         co: null
         d: null
-        h: session-save
+        h: tab-prev
+        l: tab-next
         m: buffer
   content.notifications:
     https://boards.4channel.org: true
