@@ -19,16 +19,17 @@ settings:
         '3': open https://lobste.rs/
         '4': open https://www.youtube.com/
         <Ctrl+t>: null
+        <Ctrl+w>: null
         '@': open -t https://news.ycombinator.com/
         J: scroll-px 0 800
         K: scroll-px 0 -800
         S: session-save
-        '`': tab-close
         co: null
         d: null
         h: tab-prev
         l: tab-next
         m: buffer
+        q: tab-close
   content.notifications:
     https://boards.4channel.org: true
     https://dlive.tv: false
