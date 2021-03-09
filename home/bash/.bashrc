@@ -126,6 +126,9 @@ alias xterm='xterm -b 20'
 alias feh="feh --image-bg black -Z -."
 alias qbexp="sed -E 's|^(\S+) ?(.*)|<a href="\1">\2</a>|' ~/.config/qutebrowser/bookmarks/urls > qutebrowser-bookmarks.html"
 alias rss='canto-curses'
+alias flash='sudo balena-etcher-electron'
+alias xtest='xrandr --output DVI-I-1 --mode "1600x1200_60.00"'
+alias brutaldoom='gzdoom brutalv21.pk3'
 
 # Auto completion
 complete -cf sudo
