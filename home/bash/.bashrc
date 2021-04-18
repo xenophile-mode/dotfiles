@@ -106,6 +106,7 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gl='git log'
 alias gs='git status'
+alias cln='git clone'
 alias md='mkdir'
 alias k='kak'
 alias pi='sudo pacman -S'
@@ -129,6 +130,8 @@ alias rss='canto-curses'
 alias flash='sudo balena-etcher-electron'
 alias xtest='xrandr --output DVI-I-1 --mode "1600x1200_60.00"'
 alias brutaldoom='gzdoom brutalv21.pk3'
+alias yd='youtube-dl'
+alias mp3='youtube-dl --extract-audio --audio-format mp3'
 
 # Auto completion
 complete -cf sudo

@@ -16,6 +16,7 @@ settings:
         $: open -t https://www.youtube.com/
         '%': open -t https://lainchan.org/%CE%A9/catalog.html
         '&': open -t https://translate.google.com/translate?sl=auto&tl=en&u=https://spacemorgue.com
+        '*': open -t https://github.com/
         '1': open https://boards.4channel.org/g/
         '2': open https://news.ycombinator.com/
         '3': open https://lobste.rs/
@@ -23,6 +24,7 @@ settings:
         '5': open https://lainchan.org/%CE%A9/catalog.html
         '6': open https://translate.google.com.ar/translate?hl=en&sl=ru&u=https://vk.com/technocom_group&prev=search&pto=aue
         '7': open https://translate.google.com/translate?sl=auto&tl=en&u=https://spacemorgue.com
+        '8': open https://github.com/
         <Ctrl+t>: null
         <Ctrl+w>: null
         '@': open -t https://news.ycombinator.com/
